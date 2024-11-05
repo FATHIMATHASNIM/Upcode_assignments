@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 5px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: #f0f2f5; /* Add background color */
+        }
+       
+
+        h1 {
+            font-weight: bolder;
+            font-size: 40px;
+            text-align: center;
+            margin-top: 20px; /* Add margin top for better spacing */
+        }
+
+        .productCard {
+            width: 90%; /* Adjust the width */
+            margin: auto; /* Center the product card */
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust columns for responsive layout */
+            gap: 20px;
+            justify-items: center;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* Add smooth transition on hover */
+            max-width: 100%;
+        }
+
+        .product:hover {
+            transform: translateY(-5px); /* Add slight lift effect on hover */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+        }
+
+        .product img {
+            max-width: 100%;
+            height: 150px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            object-fit: cover; /* Ensure images cover the entire container */
+        }
+
+        .product h2 {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .product h3 {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 10px; /* Add margin bottom for spacing */
+        }
+
+        .product p {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px; /* Add margin bottom for spacing */
+        }
+
+        .product .rating {
+            font-size: 0.9em;
+            color: #888;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <h1>Products</h1>
+        </div>
+        <!-- <div class="prodContainer"> -->
+        <div class="productCard" id="productCard">
+
+        </div>
+    </div>
+    <!-- </div> -->
+
+    <script>
+
+       async function getProducts(){
+            var productResponse = await fetch('https://fakestoreapi.com/products',{method:'GET'});
+            var data = await productResponse.json();
+            console.log('data: ',data)
+            var productsElement = document.getElementsByClassName('productCard')
+            var prodE1 = productsElement[0];
+            var cardProd = "";
+        for (var p of data) {
+            cardProd =
+                cardProd +
+                '<div class="product">' +
+                '<img src="' +
+                p.image +
+                '" alt="' +
+                p.title +
+                '">' +
+                "<h2>" +
+                "</h2>" +
+                "<h3>$" +
+                p.price +
+                "</h3>" +
+                '<div class="rating">Rating: ' +
+                p.rating.rate +
+                " (" +
+                p.rating.count +
+                " reviews)</div>" +
+                "</div>";
+        }
+            console.log(cardProd)
+            prodE1.innerHTML = cardProd;
+        }
+        getProducts()
+        
+        
+        
+        
+    </script>
+</body>
+
+</html>
