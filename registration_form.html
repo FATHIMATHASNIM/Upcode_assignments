@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      input[type="text"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #2b2929;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      input[type="email"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #2b2929;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #2b2929;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      .gender {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        position: relative;
+        width: 1095px;
+        padding: 12px;
+        border: 1px solid #2b2929;
+        border-radius: 4px;
+        resize: vertical;
+        justify-content: space-evenly;
+      }
+
+      input[type="date"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #2b2929;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #2b2929;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      input[type="file"] {
+        width: 100%;
+        padding: 12px;
+        background-color: white;
+        border: 1px solid #2b2929;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      .check {
+        width: 100%;
+        padding: 12px;
+        background-color: white;
+        border: 1px solid #2b2929;
+        border-radius: 4px;
+        resize: vertical;
+      }
+
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+
+      input[type="submit"] {
+        background-image: linear-gradient(rgba(112, 107, 107, 0.755), rgb(15, 90, 125));
+        border: 1px solid black;
+        color: white;
+        padding: 12px 20px;
+
+        border-radius: 4px;
+        cursor: pointer;
+        /* float: right; */
+      }
+
+      input[type="submit"]:hover {
+        background-color: rgb(40, 91, 89);
+      }
+
+      .container {
+    
+        border-radius: 5px;
+        background-color: #51565a6e;
+        padding: 20px;
+      }
+
+      .col-25 {
+        float: left;
+        width: 25%;
+        margin-top: 6px;
+        text-align: right;
+      }
+
+      .col-50 {
+        float: left;
+        /* width: 25%; */
+        margin-left: 10px;
+        margin-top: 6px;
+      }
+
+      .col-50gender {
+        float: left;
+        align-items: center;
+        /* width: 25%; */
+        /* margin-left: 10px; */
+        margin-top: 6px;
+      }
+
+      .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+      }
+
+      /* Clear floats after the columns */
+      .row::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-evenly;
+        position: relative;
+        margin-right: 35%;
+      }
+
+      .submit {
+        position: relative;
+        margin-left: 75%;
+        /* padding: 5px; */
+        /* margin: 5px; */
+      }
+
+      /* .clear {
+        position: relative;
+        margin-left: 85%;
+        padding: 5px;
+        margin: 5px;
+      } */
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Employee Registration Form</h1>
+      <form action="">
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">Full Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="fullname" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="email">Email</label>
+          </div>
+          <div class="col-75">
+            <input type="email" id="email" name="email" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="password">Password</label>
+          </div>
+          <div class="col-75">
+            <input type="password" id="password" name="password" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="confirm-password">Confirm Password</label>
+          </div>
+          <div class="col-75">
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="gender">Gender</label>
+          </div>
+          <div class="col-50gender">
+            <div class="gender">
+              <div class="gender-female">
+                <input type="radio" id="gender" name="gender" value="female" />
+                <label for="female">Female</label>
+              </div>
+              <div class="gender-male">
+                <input type="radio" id="gender" name="gender" value="male" />
+                <label for="male">Male</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="dob">DOB</label>
+          </div>
+          <div class="col-75">
+            <input type="date" name="dob" id="dob" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="mobile">Mobile</label>
+          </div>
+          <div class="col-75">
+            <input type="number" name="mobile" id="mobile" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="resume">Resume</label>
+          </div>
+          <div class="col-75">
+            <input type="file" name="resume" id="resume" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="physic">Physically challenged</label>
+          </div>
+          <div class="col-75">
+            <div class="check">
+              <input type="checkbox" name="physic" id="physic" /><label
+                for="info"
+                >(Check if physically Challenged)</label
+              >
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="country">Country</label>
+          </div>
+          <div class="col-75">
+            <input type="text" name="country" id="country" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="country">City</label>
+          </div>
+          <div class="col-75">
+            <input type="text" name="city" id="city" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="address">Address</label>
+          </div>
+          <div class="col-75">
+            <textarea
+              id="subject"
+              name="subject"
+              style="height: 200px"
+            ></textarea>
+          </div>
+        </div>
+        <br />
+        <div class="row">
+          <div class="buttons">
+            <div class="submit">
+              <input type="submit" value="Submit" />
+            </div>
+            <div class="clear">
+              <input type="submit" value="Clear" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
