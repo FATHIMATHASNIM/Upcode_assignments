@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Implementing POST method</title>
+    <style>
+    
+      body {
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        margin: 20px;
+      }
+      form {
+        border: 2px solid #c80a2a70;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="number"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ffc0cb;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      textarea {
+        height: 100px;
+      }
+      select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ffc0cb;
+        border-radius: 5px;
+      }
+      button {
+        background-color: #ffc0cb;
+        color: #f08080;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #f08080;
+        color: white;
+      }
+      .success {
+        margin-top: 10px;
+        color: green;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="productForm">
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productname" name="productname"><br><br>
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price"><br><br>
+        <label for="description">Description</label>
+        <textarea name="description" id="description"></textarea><br><br>
+        <label for="category">Category</label>
+        <select name="category" id="category">
+          <option value="healthandBeauty">Health and Beauty</option>
+          <option value="home">Home Appliances</option>
+          <option value="Stationary">Stationary</option>
+          <option value="Garments">Garments</option>
+        </select><br><br>
+        <button type="button" onclick="addProduct()">Add Product</button>
+        <div class="success"></div>
+
+    </form>
+    <script>
+      
+      async function createProduct(productData) {
+
+        var response = await fetch('https://fakestoreapi.com/products', {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(productData),
+        });
+        var data = await response.json()
+        console.log("Created",data)
+      }
+      function addProduct(){
+        var productName = document.getElementById('productname').value;
+        var price = document.getElementById('price').value;
+        var description = document.getElementById('description').value;
+        var category = document.getElementById('category').value;
+
+        var productData= {
+          title: productName,
+          price: parseFloat(price),
+          description: description,
+          category: category
+        }
+        
+        document.querySelector('.success').innerHTML = "Product added successfully";
+
+        createProduct(productData);
+      }
+      // createProduct()
+    </script>
+  </body>
+</html>
