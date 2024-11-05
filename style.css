@@ -1,0 +1,48 @@
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  /* background-color: aquamarine; */
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, Main (including Nav and Main Content), Footer */
+  height: 100%;
+}
+
+.header,
+.footer {
+  background-color: rgb(234, 180, 219);
+  text-align: center;
+  padding: 10px 0;
+}
+
+.main {
+  background-color: rgb(245, 251, 251);
+  display: grid;
+  grid-template-rows: auto 1fr; /* Nav, Main Content */
+}
+
+.nav {
+  background-color: blueviolet;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.main-content {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer {
+  background-color: rgb(159, 107, 210);
+  text-align: center;
+  padding: 10px 0;
+}
+
+h1 {
+  margin: 0;
+}
