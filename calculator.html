@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <title>Calulator</title>
+  </head>
+  <body>
+    <div class="main">
+      <input type="text" id="res" />
+      <div class="btn">
+        <div class="col1">
+          <button class="clr" value="c" onclick="displayClear()">c</button>
+          <button class="op" value="%" onclick=" setOperator('%')">%</button>
+          <button class="op" value="/" onclick=" setOperator('/')">/</button>
+        </div>
+        <div class="col2">
+          <button class="num" value="7" onclick="show('7')">7</button>
+          <button class="num" value="8" onclick="show('8')">8</button>
+          <button class="num" value="9" onclick="show('9')">9</button>
+          <button class="op" value="*" onclick=" setOperator('*')">*</button>
+        </div>
+        <div class="col3">
+          <button class="num" value="4" onclick="show('4')">4</button>
+          <button class="num" value="5" onclick="show('5')">5</button>
+          <button class="num" value="6" onclick="show('6')">6</button>
+          <button class="op" value="-" onclick=" setOperator('-')">-</button>
+        </div>
+        <div class="col4">
+          <button class="num" value="1" onclick="show('1')">1</button>
+          <button class="num" value="2" onclick="show('2')">2</button>
+          <button class="num" value="3" onclick="show('3')">3</button>
+          <button class="op" value="+" onclick=" setOperator('+')">+</button>
+        </div>
+        <div class="col5">
+          <button class="num" onclick="show('0')" value="0">0</button>
+          <!-- <button class="num" onclick=" ">.</button> -->
+          <button onclick="calculateResult()" class="equal" value="=">=</button>
+        </div>
+      </div>
+    </div>
+    <script src = 'calc.js' ></script>
+    
+   
+  </body>
+</html>
